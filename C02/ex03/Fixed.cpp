@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 18:01:15 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 19:18:12 by ialvarez         ###   ########.fr       */
+/*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
+/*   Updated: 2023/08/09 21:07:51 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ Fixed Fixed::operator--(int) {
 	Fixed tmp(*this);
 	tmp.value = this->value--;
 	return (tmp);
-}   
+}
 
 // Sobrecarga de operadores: MIN y MAX
 

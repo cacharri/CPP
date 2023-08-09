@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/31 18:01:12 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 19:18:34 by ialvarez         ###   ########.fr       */
+/*   Created: 2023/08/09 21:08:10 by ialvarez          #+#    #+#             */
+/*   Updated: 2023/08/09 21:08:14 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <iostream>
 #include <cmath>
-#include <limits>	
+#include <limits>
 
 class Fixed {
 private:
@@ -42,7 +42,7 @@ public:
 	Fixed& operator=(const Fixed& other);
 
 	// Sobrecarga del operador de comparación
-	
+
 	bool    operator>(const Fixed& other) const;
 	bool    operator>=(const Fixed& other) const;
 	bool    operator<(const Fixed& other) const;
@@ -51,7 +51,7 @@ public:
 	bool	operator!=(const Fixed& other) const;
 
 	// Sobrecarga del operador aritmético
-	
+
     Fixed operator+(const Fixed& other) const;
     Fixed operator-(const Fixed& other) const;
     Fixed operator*(const Fixed& other) const;
