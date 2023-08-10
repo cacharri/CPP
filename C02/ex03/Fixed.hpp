@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:10 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 21:08:14 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:28:34 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,12 @@ public:
 
 	// Función miembro que convierte el valor de punto fijo a un valor entero
 	int toInt() const;
+
+	int getValue() const;
+	int setValue(int newValue); 
 };
+
+void	modifyValue(Fixed& fixed, int newValue);
 
 // Sobrecarga del operador << para imprimir el valor de punto fijo en el stream de salida
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);

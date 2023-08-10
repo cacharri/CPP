@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 21:07:51 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/10 19:28:12 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -143,6 +143,17 @@ float Fixed::toFloat() const {
 // Función miembro que convierte el valor de punto fijo a un valor entero
 int Fixed::toInt() const {
 	return this->value >> fractionalBits;
+}
+
+int Fixed::getValue() const {
+	return value;
+}
+int Fixed::setValue(int newValue) {
+	Fixed::value = newValue;
+}
+
+void	modifyValue(Fixed& fixed, int newValue) {
+	fixed.setValue(newValue);
 }
 
 // Sobrecarga del operador << para imprimir el valor de punto fijo en el stream de salida
