@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:10 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/10 19:28:34 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/21 22:37:51 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,8 @@ public:
 	int toInt() const;
 
 	int getValue() const;
-	int setValue(int newValue); 
+	int setValue(int newValue);
+	Fixed abs() const;
 };
 
 void	modifyValue(Fixed& fixed, int newValue);

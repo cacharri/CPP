@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:23 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/10 19:31:55 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/21 21:16:07 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,12 @@ Point& Point::operator=(const Point& pointer) {
 		this->y.Fixed::setValue(pointer.y.Fixed::getValue());
 	}
 	return *this;
+}
+
+Fixed Point::getValueX() const {
+    return x;
+}
+
+Fixed Point::getValueY() const {
+    return y;
 }

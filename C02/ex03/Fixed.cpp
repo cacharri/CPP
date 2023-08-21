@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/10 19:28:12 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/21 22:38:17 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,6 +150,7 @@ int Fixed::getValue() const {
 }
 int Fixed::setValue(int newValue) {
 	Fixed::value = newValue;
+	return newValue;
 }
 
 void	modifyValue(Fixed& fixed, int newValue) {
@@ -160,4 +161,8 @@ void	modifyValue(Fixed& fixed, int newValue) {
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
 	out << fixed.toFloat();
 	return out;
+
+}
+Fixed Fixed::abs() const {
+	return Fixed(std::abs(value)); // Suponiendo que value es el miembro interno que almacena el valor
 }
