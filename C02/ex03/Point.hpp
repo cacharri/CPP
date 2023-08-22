@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:35 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/21 21:14:42 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/22 21:47:35 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,7 @@ class Point {
 		Fixed getValueX() const;
     	Fixed getValueY() const;
 };
+
+bool    bsp(Point const a, Point const b, Point const c, Point const point);
 
 #endif

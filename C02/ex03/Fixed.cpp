@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/21 22:38:17 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/22 22:09:56 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ Fixed::Fixed() : value(0) {
 // Constructor que convierte un entero constante en un valor de punto fijo
 Fixed::Fixed(const int value) : value(value << fractionalBits) {
 	std::cout << "Int constructor called" << std::endl;
+}
+
+Fixed::Fixed(const double value) {
+    // Redondeamos el valor de punto flotante al entero más cercano
+    int32_t integerValue = static_cast<int32_t>(roundf(value * (1 << fractionalBits)));
+
+    // Asignamos el valor de punto fijo
+    this->value = integerValue;
+
+    std::cout << "Double constructor called" << std::endl;
 }
 
 // Constructor que convierte un punto flotante constante en un valor de punto fijo
@@ -143,6 +153,10 @@ float Fixed::toFloat() const {
 // Función miembro que convierte el valor de punto fijo a un valor entero
 int Fixed::toInt() const {
 	return this->value >> fractionalBits;
+}
+
+double Fixed::toDouble() const {
+	return static_cast<double>(this->value) / (1 << fractionalBits);
 }
 
 int Fixed::getValue() const {

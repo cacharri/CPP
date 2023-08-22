@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:10 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/21 22:37:51 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/22 22:07:56 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ public:
 
 	// Constructor que convierte un punto flotante constante en un valor de punto fijo
 	Fixed(const float value);
-
+	
+	Fixed(const double value);
+	
 	// Destructor
 	~Fixed();
 
@@ -80,6 +82,9 @@ public:
 
 	// Función miembro que convierte el valor de punto fijo a un valor entero
 	int toInt() const;
+
+	// Función miembro que convierte el valor de punto fijo a un valor double
+	double toDouble() const;
 
 	int getValue() const;
 	int setValue(int newValue);
