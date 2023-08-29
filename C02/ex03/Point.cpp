@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:23 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/22 22:13:25 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/08/24 17:34:20 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ Point::~Point() {
 Point::Point(const Point& pointer) : x(pointer.x), y(pointer.y) {
     std::cout << "Copy constructor called" << std::endl;
 }
-
 
 Point::Point(const float i, const float j) : x(i), y(j) {
     std::cout << "Float constructor initialized" << std::endl;
