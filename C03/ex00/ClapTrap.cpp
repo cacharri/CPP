@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/23 15:25:51 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/29 19:37:54 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/09/06 16:21:40 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,23 @@ ClapTrap::ClapTrap(const std::string& initialName) : Name(initialName), Hit_poin
 
 std::string	ClapTrap::getName() const {
 		return Name;
-		}
+}
+
+// Sobrecarga del operador de asignación
+ClapTrap& ClapTrap::operator=(const ClapTrap other) {
+	std::cout << "Assignation operator called" << std::endl;
+	if (this != &other) {
+		this->Name = other.Name;
+	}
+	return *this;
+}
+
+// Constructor de copia
+
+ClapTrap::ClapTrap(const ClapTrap& other) {
+	std::cout << "Copy constructor called" << std::endl;
+	this->Name = other.Name;
+}
 
 // Destructor
 ClapTrap::~ClapTrap() {

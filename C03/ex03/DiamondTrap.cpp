@@ -1,29 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/04 18:33:02 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/09/06 16:11:50 by ialvarez         ###   ########.fr       */
+/*   Created: 2023/09/06 18:07:22 by ialvarez          #+#    #+#             */
+/*   Updated: 2023/09/06 19:01:27 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-#define SCAVTRAP_HPP
+#include "DiamondTrap.hpp"
 
-#include "ClapTrap.hpp"
+DiamondTrap::DiamondTrap(){
+    std::cout << "DiamondTrap default constructor called" << std::endl;
+}
 
-class ScavTrap : public ClapTrap {
-public:
-    ScavTrap();
-    ScavTrap(const std::string& name);
-    ScavTrap(const ScavTrap& other);
-    ScavTrap& operator=(const ScavTrap other);
-    ~ScavTrap();
-    void guardGate();
-    virtual void attack(const std::string& target); // Sobrescribimos la función de ataque
-};
-
-#endif
+DiamondTrap::DiamondTrap(const std::string& name) : ClapTrap(name + "_clap_name") {
+    FragTrap::setHitPoints(FragTrap::getHitPoints());
+    ScavTrap::setEnergyPoints(ScavTrap::getEnergyPoints());
+    FragTrap::setAttackDamage(FragTrap::getAttackDamage());
+}

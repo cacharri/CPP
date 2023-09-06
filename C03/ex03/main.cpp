@@ -6,31 +6,35 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:32:11 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/09/06 15:55:30 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/09/06 17:54:33 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp" 
-#include "ClapTrap.hpp"
+#include "FragTrap.hpp"
 
 int main() {
-    // Crear una instancia de ClapTrap
-    ClapTrap clapTrap("ClapTrap-1");
 
-    // Realizar una serie de acciones con ClapTrap
-    clapTrap.attack("Target-1");
-    clapTrap.takeDamage(5);
-    clapTrap.beRepaired(3);
-    clapTrap.attack("Target-2");
+    // Crea instancias de cada clase y sus heredadas
+    ClapTrap claptrap("Vanido");
+    ScavTrap scavtrap("Lost mind");
+    FragTrap fragtrap("Croac");
 
-    // Crear una instancia de ScavTrap
-    ScavTrap scavTrap("ScavTrap-1");
+    // Probando las funciones de ClapTrap
+    claptrap.attack("Target 1");
+    claptrap.takeDamage(10);
+    claptrap.beRepaired(5);
 
-    // Realizar una serie de acciones con ScavTrap
-    scavTrap.attack("Target-3");
-    scavTrap.takeDamage(15);
-    scavTrap.beRepaired(10);
-    scavTrap.guardGate();
+    // Probando las funciones de ScavTrap
+    scavtrap.attack("Target 2");
+    scavtrap.takeDamage(15);
+    scavtrap.beRepaired(7);
+    scavtrap.guardGate(); // Función especial de ScavTrap
+
+    // Probando las funciones de FragTrap
+    fragtrap.attack("Target 3");
+    fragtrap.takeDamage(20);
+    fragtrap.beRepaired(10);
+    fragtrap.highFivesGuys(); // Función especial de FragTrap
 
     return 0;
 }
