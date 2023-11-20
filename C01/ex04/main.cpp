@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:38:05 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/06/21 20:09:19 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/10/09 18:17:50 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int main() {
     while (true) {
         std::cout << "Introduce la cadena s1: ";
         std::getline(std::cin, s1);
-        if (s1.empty()) {
+        if (s1.empty() || s1 == "\"\"") {
             std::cout << "La cadena s1 no puede estar vacía. Inténtalo de nuevo.\n";
             continue;
         }
@@ -40,7 +40,7 @@ int main() {
     while (true) {
         std::cout << "Introduce la cadena s2: ";
         std::getline(std::cin, s2);
-        if (s2.empty()) {
+        if (s2.empty() || s2 == "\"\"") {
             std::cout << "La cadena s2 no puede estar vacía. Inténtalo de nuevo.\n";
             continue;
         }
@@ -63,4 +63,3 @@ int main() {
 
     return 0;
 }
- 
