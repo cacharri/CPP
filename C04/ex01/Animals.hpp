@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/19 16:06:08 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/11/16 18:54:20 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/11/21 18:18:04 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Animal {
 	public:
 		Animal();
 		virtual ~Animal();
+		Animal(const Animal& other);
+		Animal& operator=(const Animal& other);
 		virtual void makeSound() const;
 		std::string getType() const;
 
@@ -41,6 +43,8 @@ class Dog : public Animal {
 	public:
 		Dog();
 		virtual ~Dog();
+		Dog(const Dog& other);
+		Dog& operator=(const Dog& other);
 		void makeSound() const;
 };
 
@@ -49,7 +53,9 @@ class Cat : public Animal {
 		Brain* brain;
 	public:
 		Cat();
+		Cat(const Cat& other);
 		virtual ~Cat();
+		Cat& operator=(const Cat& other);
 		void makeSound() const;
 };
 
@@ -57,6 +63,8 @@ class WrongAnimal {
 	public:
 		WrongAnimal();
 		virtual ~WrongAnimal();
+		WrongAnimal(const WrongAnimal& other);
+		WrongAnimal& operator=(const WrongAnimal& other);
 		virtual void makeSound() const;
 		std::string getType() const;
 
@@ -68,6 +76,8 @@ class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
 		virtual ~WrongCat();
+		WrongCat(const WrongCat& other);
+		WrongCat& operator=(const WrongCat& other);
 		virtual void makeSoundCat() const;
 };
 
