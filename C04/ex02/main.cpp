@@ -5,31 +5,28 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 19:48:58 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/17 20:33:59 by ialvarez         ###   ########.fr       */
+/*   Created: 2023/11/28 20:13:29 by ialvarez          #+#    #+#             */
+/*   Updated: 2023/11/28 20:14:10 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Weapon.hpp"
-#include "HumanA.hpp"
-#include "HumanB.hpp"
+#include "Animals.hpp"
 
-int main()
-{
-{
-Weapon club = Weapon("crude spiked club");
-HumanA bob("Bob", club);
-bob.attack();
-club.setType("some other type of club");
-bob.attack();
-}
-{
-Weapon club = Weapon("crude spiked club");
-HumanB jim("Jim");
-jim.setWeapon(club);
-jim.attack();
-club.setType("some other type of club");
-jim.attack();
-}
-return 0;
+int main() {
+    const Animal* j = new Dog();
+    const Animal* i = new Cat();
+    delete j;
+    delete i;
+
+    // Create and fill an array of Animal objects
+    const int arraySize = 4;
+    Animal* animalArray[arraySize];
+    for (int i = 0; i < arraySize / 2; ++i) {
+        animalArray[i] = new Dog();
+        animalArray[i + arraySize / 2] = new Cat();
+    }
+    for (int i = 0; i < arraySize; ++i) {
+        delete animalArray[i];
+    }
+    return 0;
 }

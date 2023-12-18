@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/19 16:06:08 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/11/28 18:28:28 by ialvarez         ###   ########.fr       */
+/*   Created: 2023/11/28 18:33:44 by ialvarez          #+#    #+#             */
+/*   Updated: 2023/11/28 20:13:01 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Animal {
 		virtual ~Animal();
 		Animal(const Animal& other);
 		Animal& operator=(const Animal& other);
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 		std::string getType() const;
 
 	protected:

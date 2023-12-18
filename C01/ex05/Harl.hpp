@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/21 20:21:20 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/07/03 17:48:37 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:21:51 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ class Harl {
 		void	warning(void);
 		void	error(void);
 	public:
+		Harl();
 		void	complain(std::string level);
+		~Harl();
 };
 
 #endif

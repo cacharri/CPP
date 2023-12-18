@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 19:49:58 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/06/20 20:00:02 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/17 21:14:32 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,10 @@ HumanB::HumanB(const std::string& newName)
     : name(newName), weapon(nullptr) {}
 
 HumanB::~HumanB() {
-    delete weapon;
 }
 
-void HumanB::setWeapon(const Weapon& newWeapon) {
-    delete weapon;
-    weapon = new Weapon(newWeapon); // Crea una copia del objeto Weapon en el heap
+void HumanB::setWeapon(Weapon &newWeapon) {
+    weapon = &newWeapon;
 }
 
 void HumanB::attack() const {

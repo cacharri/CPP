@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:22:05 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/07/03 18:38:05 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/18 16:39:52 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,24 +29,19 @@ void    Harl::error(void) {
 }
 
 void    Harl::complain(std::string level) {
-	void (Harl::*funcPtr)() = nullptr;   //estoo se puedde usar de esta manera?
+	void (Harl::*fuPnt[4])(void);
 
-	if (level == "DEBUG") {
-		funcPtr = &Harl::debug;
-	}
-	else if (level == "INFO") {
-		funcPtr = &Harl::info;
-	}
-	else if (level == "WARNING") {
-		funcPtr = &Harl::warning;
-	}
-	else if (level == "ERROR") {
-		funcPtr = &Harl::error;
-	}
-	if (funcPtr != nullptr) {
-		(this->*funcPtr)();
-	}
-	else {
-		std::cout << "Unknown level: " << level << std::endl;
-	}
+	fuPnt[0] = &Harl::debug;
+	fuPnt[1] = &Harl::info;
+	fuPnt[2] = &Harl::warning;
+	fuPnt[3] = &Harl::error;
+
+	std::string complaints[4] = {"DEBUG", "INFO", "WARNING", "ERROR"};
+
+	for (int i = 0; i < 4; i++)
+	{
+		if (level == complaints[i])
+			return (this->*fuPnt[i])();
+ 	}
+	std::cout << "Unknown level: " << level << std::endl;
 }
