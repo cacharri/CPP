@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:01:15 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 19:18:12 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:57:41 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,11 +116,19 @@ Fixed Fixed::operator--(int) {
 
 // Sobrecarga de operadores: MIN y MAX
 
-const Fixed& Fixed::min(const Fixed& a, const Fixed& b) {
+const Fixed& Fixed::min_cons(const Fixed& a, const Fixed& b) {
 	return ((a < b) ? a : b);
 }
 
-const Fixed& Fixed::max(const Fixed& a, const Fixed& b) {
+Fixed& Fixed::min(Fixed& a, Fixed& b) {
+	return ((a < b) ? a : b);
+}
+
+const Fixed& Fixed::max_cons(const Fixed& a, const Fixed& b) {
+	return ((a < b) ? b : a);
+}
+
+Fixed& Fixed::max(Fixed& a, Fixed& b) {
 	return ((a < b) ? b : a);
 }
 

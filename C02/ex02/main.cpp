@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:01:09 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 19:19:25 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:56:13 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main( void )
 	std::cout << a++ << std::endl;
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl;
-	std::cout << Fixed::max( a, b ) << std::endl;
+	std::cout << Fixed::max_cons( a, b ) << std::endl;
+	std::cout << Fixed::min_cons( a, b ) << std::endl;
 	return 0;
 }

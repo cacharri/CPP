@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:01:12 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/09 19:18:34 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/19 20:57:49 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,21 @@
 
 class Fixed {
 private:
-	int value;  // Valor de punto entero
-	static const int fractionalBits = 8; // Número de bits fraccionales (constante estática)
+	int value;
+	static const int fractionalBits = 8;
 
 public:
-	// Constructor por defecto
+
 	Fixed();
 
-	// Constructor que convierte un entero constante en un valor de punto fijo
 	Fixed(const int value);
 
-	// Constructor que convierte un punto flotante constante en un valor de punto fijo
 	Fixed(const float value);
 
-	// Destructor
 	~Fixed();
 
-	// Constructor de copia
 	Fixed(const Fixed& other);
 
-	// Sobrecarga del operador de asignación, 6 nuevos
 	Fixed& operator=(const Fixed& other);
 
 	// Sobrecarga del operador de comparación
@@ -59,15 +54,15 @@ public:
 
 	// Operadores de incremento y decremento
 
-	Fixed&	operator++();		// Operador de preincremento (++valor)
-	Fixed	operator++(int);	// Operador de postincremento (valor++)
-	Fixed&	operator--();		// Operador de predecremento (--valor)
-	Fixed	operator--(int);	// Operador de postdecremento (valor--)
+	Fixed&	operator++();
+	Fixed	operator++(int);
+	Fixed&	operator--();
+	Fixed	operator--(int);
 
-	// Sobrecarga de operadores: MIN y MAX
-
-	static const Fixed& min(const Fixed& a, const Fixed& b);
-	static const Fixed& max(const Fixed& a, const Fixed& b);
+	static const Fixed& min_cons(const Fixed& a, const Fixed& b);
+	static Fixed& min(Fixed& a, Fixed& b);
+	static const Fixed& max_cons(const Fixed& a, const Fixed& b);
+	static Fixed& max(Fixed& a, Fixed& b);
 
 	// Función miembro para obtener el valor bruto del valor de punto fijo
 	int getRawBits() const;
@@ -85,4 +80,4 @@ public:
 // Sobrecarga del operador << para imprimir el valor de punto fijo en el stream de salida
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
-#endif // FIXED_HPP
+#endif

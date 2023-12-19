@@ -6,18 +6,16 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/22 22:09:56 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/19 21:02:38 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-// Constructor por defecto
 Fixed::Fixed() : value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
 
-// Constructor que convierte un entero constante en un valor de punto fijo
 Fixed::Fixed(const int value) : value(value << fractionalBits) {
 	std::cout << "Int constructor called" << std::endl;
 }
@@ -37,18 +35,15 @@ Fixed::Fixed(const float value) : value(roundf(value * (1 << fractionalBits))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
-// Destructor
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-// Constructor de copia
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
 	this->value = other.value;
 }
 
-// Sobrecarga del operador de asignación
 Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
@@ -56,8 +51,6 @@ Fixed& Fixed::operator=(const Fixed& other) {
 	}
 	return *this;
 }
-
-//Sobrecarga del operador de comparación
 
 bool Fixed::operator>(const Fixed& other) const {
 	return this->value > other.value;
@@ -83,8 +76,6 @@ bool Fixed::operator==(const Fixed& other) const{
 	return this->value == other.value;
 }
 
-//Sobrecarga operador aritmético
-
 Fixed Fixed::operator+(const Fixed& other) const {
 	return Fixed(this->toFloat() + other.toFloat());
 }
@@ -100,8 +91,6 @@ Fixed Fixed::operator*(const Fixed& other) const {
 Fixed Fixed::operator/(const Fixed& other) const {
 	return Fixed(this->toFloat() / other.toFloat());
 }
-
-// Operador de incremento y decremento
 
 Fixed& Fixed::operator++() {
 	++this->value;
