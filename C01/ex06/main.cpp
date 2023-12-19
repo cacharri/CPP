@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:22:36 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/18 16:51:06 by ialvarez         ###   ########.fr       */
+/*   Updated: 2023/12/19 19:16:09 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int main(int argc, char* argv[]) {
 	Harl harl;
 	std::string param;
-	int pos = 0;
+	int pos = -1;
 	
 	if (argc == 2) {
 		param = argv[1];
@@ -43,5 +43,6 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 	}
+	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	return 0;
 }
