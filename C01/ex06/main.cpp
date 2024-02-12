@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/03 18:22:36 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/19 19:16:09 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:17:02 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,5 @@ int main(int argc, char* argv[]) {
 			break;
 		}
 	}
-	std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	return 0;
 }
