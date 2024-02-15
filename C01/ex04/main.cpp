@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 21:38:05 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/02/12 19:10:38 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/02/15 17:10:48 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int main() {
             std::cout << "Fin de la entrada. Saliendo del programa.\n";
             return (1);
         }
-        if (s1.empty() || s1 == "\"\"") {
+        if (s1.empty()) {
             std::cout << "La cadena s1 no puede estar vacía. Inténtalo de nuevo.\n";
             continue;
         }
@@ -49,7 +49,7 @@ int main() {
             std::cout << "Fin de la entrada. Saliendo del programa.\n";
             return (1);
         }
-        if (s2.empty() || s2 == "\"\"") {
+        if (s2.empty()) {
             std::cout << "La cadena s2 no puede estar vacía. Inténtalo de nuevo.\n";
             continue;
         }
