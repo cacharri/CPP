@@ -6,7 +6,7 @@
 #    By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/29 16:16:20 by ialvarez          #+#    #+#              #
-#    Updated: 2023/11/29 16:16:28 by ialvarez         ###   ########.fr        #
+#    Updated: 2024/02/21 17:58:33 by ialvarez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ CXX = clang++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-SRCS =	main.cpp 
+SRCS =	main.cpp AMateria.cpp ICharacter.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 18:33:27 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/11/28 18:33:30 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/02/21 16:45:32 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ Animal::~Animal() {
     std::cout << "Destructor Animal called" << std::endl;
 }
 
-// Constructor de copia
 Animal::Animal(const Animal& other) : type(other.type) {
     std::cout << "Copy constructor Animal called" << std::endl;
 }
 
-// Operador de asignación
 Animal& Animal::operator=(const Animal& other) {
     std::cout << "Assignation operator of Animal called" << std::endl;
     if (this != &other) {
@@ -55,7 +53,6 @@ Dog::Dog(const Dog& other) : Animal(other), brain(new Brain) {
     std::cout << "Copy constructor Dog called" << std::endl;
 }
 
-// Operador de asignación de Dog
 Dog& Dog::operator=(const Dog& other) {
     std::cout << "Assignation operator of Dog called" << std::endl;
     Animal::operator=(other);
@@ -82,7 +79,6 @@ Cat::Cat(const Cat& other) : Animal(other), brain(new Brain) {
     std::cout << "Copy constructor Cat called" << std::endl;
 }
 
-// Operador de asignación de Cat
 Cat& Cat::operator=(const Cat& other) {
     std::cout << "Assignation operator of Cat called" << std::endl;
     Animal::operator=(other);
@@ -107,7 +103,6 @@ WrongAnimal::~WrongAnimal() {
     std::cout << "Destructor WrongAnimal called" << std::endl;
 }
 
-// Constructor de copia
 WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type) {
     std::cout << "Copy constructor WrongAnimal called" << std::endl;
 }

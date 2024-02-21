@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 16:17:27 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/02/13 19:19:15 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/02/21 19:21:50 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 #include <iostream>
-#include "ICharacter.hpp"
+
+class ICharacter;
 
 class AMateria {
 	private:
@@ -24,7 +25,7 @@ class AMateria {
 		AMateria();
 		AMateria(std::string const & type);
 		AMateria(const AMateria& other);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria& operator=(const AMateria& other);
 		std::string const & getType() const;
 		virtual AMateria* clone() const	= 0;
@@ -33,19 +34,21 @@ class AMateria {
 
 class Ice : public AMateria {
 	public:
-    Ice();
-		virtual ~Ice();
-		virtual AMateria* clone() const;
-		virtual void use(ICharacter& target);
+		Ice();
+		Ice(const Ice& other);
+		~Ice();
+		AMateria* clone() const;
+		void use(ICharacter& target);
 };
 
 class Cure : public AMateria {
 	public:
 		Cure();
-		virtual ~Cure();
-		virtual AMateria* clone() const;
-		virtual void use(ICharacter& target);
-};
+		Cure(const Cure& other);
+		~Cure();
 
+		AMateria* clone() const;
+		void use(ICharacter& target);
+};
 
 #endif
