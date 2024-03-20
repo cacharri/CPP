@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:27:54 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/02/29 17:56:55 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/03/05 18:38:56 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ public:
     int getGrade() const;
     void incrementGrade();
     void decrementGrade();
+    void signForm();
 };
 
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat);

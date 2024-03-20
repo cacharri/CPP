@@ -6,11 +6,12 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 20:28:05 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/02/29 17:56:36 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:00:51 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "AForm.hpp"
 
 const char* Bureaucrat::GradeTooHighException::what() const throw () {
     return "Grade is too high";
@@ -64,7 +65,18 @@ void Bureaucrat::decrementGrade() {
         throw GradeTooLowException();
 }
 
+void Bureaucrat::signForm() {}
+
 std::ostream& operator<<(std::ostream& os, const Bureaucrat& bureaucrat) {
     os << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade();
     return os;
+}
+
+void Bureaucrat::executeForm(const AForm& form) const {
+    try {
+        form.execute(*this);
+        std::cout << "<" << _name << "> executed <" << form.getName() << ">" << std::endl;
+    } catch (std::exception& e) {
+        std::cerr << "Failed to execute form: " << e.what() << std::endl;
+    }
 }
