@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:07:47 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/19 21:02:38 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:41:25 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -167,5 +167,5 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed) {
 
 }
 Fixed Fixed::abs() const {
-	return Fixed(std::abs(value)); // Suponiendo que value es el miembro interno que almacena el valor
+	return Fixed(std::abs(value));
 }

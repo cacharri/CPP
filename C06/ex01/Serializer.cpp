@@ -1,37 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/26 19:09:07 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/04/09 17:29:59 by ialvarez         ###   ########.fr       */
+/*   Created: 2024/04/08 21:37:01 by ialvarez          #+#    #+#             */
+/*   Updated: 2024/04/08 21:50:02 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
-#include <iostream>
+#include "Serializer.hpp"
 
-class Fixed {
-    private:
-        int value;
-        static const int fractionalBits = 8;
+uintptr_t Serializer::serialize(Data* ptr) {
+    return reinterpret_cast<uintptr_t>(ptr);
+}
 
-    public:
-
-        Fixed();
-
-        ~Fixed();
-
-        Fixed(const Fixed& other);
-
-        Fixed& operator=(const Fixed& other);
-
-        int getRawBits() const;
-
-        void setRawBits(int const raw);
-};
-
-#endif
+Data* Serializer::deserialize(uintptr_t raw) {
+    return reinterpret_cast<Data*>(raw);
+}

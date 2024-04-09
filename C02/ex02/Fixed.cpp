@@ -6,13 +6,12 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:01:15 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/19 20:57:41 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:40:08 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-// Constructor por defecto
 Fixed::Fixed() : value(0) {
 	std::cout << "Default constructor called" << std::endl;
 }
@@ -27,18 +26,15 @@ Fixed::Fixed(const float value) : value(roundf(value * (1 << fractionalBits))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 
-// Destructor
 Fixed::~Fixed() {
 	std::cout << "Destructor called" << std::endl;
 }
 
-// Constructor de copia
 Fixed::Fixed(const Fixed& other) {
 	std::cout << "Copy constructor called" << std::endl;
 	this->value = other.value;
 }
 
-// Sobrecarga del operador de asignación
 Fixed& Fixed::operator=(const Fixed& other) {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {

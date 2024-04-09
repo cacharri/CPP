@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/31 18:01:12 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/19 20:57:49 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:40:36 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,16 +64,9 @@ public:
 	static const Fixed& max_cons(const Fixed& a, const Fixed& b);
 	static Fixed& max(Fixed& a, Fixed& b);
 
-	// Función miembro para obtener el valor bruto del valor de punto fijo
 	int getRawBits() const;
-
-	// Función miembro para establecer el valor bruto del valor de punto fijo
 	void setRawBits(int const raw);
-
-	// Función miembro que convierte el valor de punto fijo a un valor de punto flotante
 	float toFloat() const;
-
-	// Función miembro que convierte el valor de punto fijo a un valor entero
 	int toInt() const;
 };
 

@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/27 19:17:45 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/12/19 19:53:56 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/04 17:39:18 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,23 +24,14 @@ private:
 public:
 
 	Fixed();
-
 	Fixed(const int value);
-
 	Fixed(const float value);
-
 	~Fixed();
-
 	Fixed(const Fixed& other);
-
 	Fixed& operator=(const Fixed& other);
-
 	int getRawBits() const;
-
 	void setRawBits(int const raw);
-
 	float toFloat() const;
-
 	int toInt() const;
 };
 
