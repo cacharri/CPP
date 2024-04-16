@@ -6,12 +6,12 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 18:58:43 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/03/20 17:29:46 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/16 19:18:50 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-#include <fstream> // Para manejar archivos
+#include <fstream>
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm(target) {}
 

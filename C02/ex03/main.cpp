@@ -6,14 +6,13 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:27 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/22 22:36:11 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:17:14 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
 
 int main() {
-    // Crear puntos para representar los vértices del triángulo
     Point a(0.0, 0.0);
     Point b(1.0, 0.0);
     Point c(0.5, 1.0);

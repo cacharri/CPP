@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 21:08:10 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/08/22 22:07:56 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/11 19:19:41 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,82 +18,56 @@
 #include <limits>
 
 class Fixed {
-private:
-	int value;  // Valor de punto entero
-	static const int fractionalBits = 8; // Número de bits fraccionales (constante estática)
+	private:
+		int value;
+		static const int fractionalBits = 8;
+	public:
+		Fixed();
 
-public:
-	// Constructor por defecto
-	Fixed();
+		Fixed(const int value);
 
-	// Constructor que convierte un entero constante en un valor de punto fijo
-	Fixed(const int value);
+		Fixed(const float value);
+		
+		Fixed(const double value);
+		
+		~Fixed();
 
-	// Constructor que convierte un punto flotante constante en un valor de punto fijo
-	Fixed(const float value);
-	
-	Fixed(const double value);
-	
-	// Destructor
-	~Fixed();
+		Fixed(const Fixed& other);
 
-	// Constructor de copia
-	Fixed(const Fixed& other);
+		Fixed& operator=(const Fixed& other);
 
-	// Sobrecarga del operador de asignación, 6 nuevos
-	Fixed& operator=(const Fixed& other);
+		bool    operator>(const Fixed& other) const;
+		bool    operator>=(const Fixed& other) const;
+		bool    operator<(const Fixed& other) const;
+		bool    operator<=(const Fixed& other) const;
+		bool    operator==(const Fixed& other) const;
+		bool	operator!=(const Fixed& other) const;
 
-	// Sobrecarga del operador de comparación
+		Fixed operator+(const Fixed& other) const;
+		Fixed operator-(const Fixed& other) const;
+		Fixed operator*(const Fixed& other) const;
+		Fixed operator/(const Fixed& other) const;
 
-	bool    operator>(const Fixed& other) const;
-	bool    operator>=(const Fixed& other) const;
-	bool    operator<(const Fixed& other) const;
-	bool    operator<=(const Fixed& other) const;
-	bool    operator==(const Fixed& other) const;
-	bool	operator!=(const Fixed& other) const;
+		Fixed&	operator++();		// (++valor)
+		Fixed	operator++(int);	// (valor++)
+		Fixed&	operator--();		// (--valor)
+		Fixed	operator--(int);	// (valor--)
 
-	// Sobrecarga del operador aritmético
-
-    Fixed operator+(const Fixed& other) const;
-    Fixed operator-(const Fixed& other) const;
-    Fixed operator*(const Fixed& other) const;
-    Fixed operator/(const Fixed& other) const;
-
-	// Operadores de incremento y decremento
-
-	Fixed&	operator++();		// Operador de preincremento (++valor)
-	Fixed	operator++(int);	// Operador de postincremento (valor++)
-	Fixed&	operator--();		// Operador de predecremento (--valor)
-	Fixed	operator--(int);	// Operador de postdecremento (valor--)
-
-	// Sobrecarga de operadores: MIN y MAX
-
-	static const Fixed& min(const Fixed& a, const Fixed& b);
-	static const Fixed& max(const Fixed& a, const Fixed& b);
-
-	// Función miembro para obtener el valor bruto del valor de punto fijo
-	int getRawBits() const;
-
-	// Función miembro para establecer el valor bruto del valor de punto fijo
-	void setRawBits(int const raw);
-
-	// Función miembro que convierte el valor de punto fijo a un valor de punto flotante
-	float toFloat() const;
-
-	// Función miembro que convierte el valor de punto fijo a un valor entero
-	int toInt() const;
-
-	// Función miembro que convierte el valor de punto fijo a un valor double
-	double toDouble() const;
-
-	int getValue() const;
-	int setValue(int newValue);
-	Fixed abs() const;
+		static const Fixed& min(const Fixed& a, const Fixed& b);
+		static const Fixed& max(const Fixed& a, const Fixed& b);
+		
+		int getRawBits() const;
+		void setRawBits(int const raw);
+		float toFloat() const;
+		int toInt() const;
+		double toDouble() const;
+		int getValue() const;
+		int setValue(int newValue);
+		Fixed abs() const;
 };
 
 void	modifyValue(Fixed& fixed, int newValue);
 
-// Sobrecarga del operador << para imprimir el valor de punto fijo en el stream de salida
 std::ostream& operator<<(std::ostream& out, const Fixed& fixed);
 
-#endif // FIXED_HPP
+#endif

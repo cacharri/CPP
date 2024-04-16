@@ -6,11 +6,11 @@
 #    By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/22 20:27:21 by ialvarez          #+#    #+#              #
-#    Updated: 2024/04/03 20:45:06 by ialvarez         ###   ########.fr        #
+#    Updated: 2024/04/16 19:17:33 by ialvarez         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = maggots
+NAME = garden
 CXX = clang++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
