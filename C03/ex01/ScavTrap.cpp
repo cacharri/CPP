@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 21:14:32 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/09/06 16:01:55 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:24:37 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     std::cout << "ScavTrap [" << name << "] has been constructed!" << std::endl;
 }
 
-// Sobrecarga del operador de asignación
 ScavTrap& ScavTrap::operator=(const ScavTrap other) {
 	std::cout << "Assignation operator called" << std::endl;
 	if (this != &other) {
@@ -31,8 +30,6 @@ ScavTrap& ScavTrap::operator=(const ScavTrap other) {
 	}
 	return *this;
 }
-
-// Constructor de copia
 
 ScavTrap::ScavTrap(const ScavTrap& other) {
 	std::cout << "Copy constructor called" << std::endl;

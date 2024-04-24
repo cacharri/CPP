@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:33:02 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/09/06 16:11:50 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:24:45 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ public:
     ScavTrap& operator=(const ScavTrap other);
     ~ScavTrap();
     void guardGate();
-    virtual void attack(const std::string& target); // Sobrescribimos la función de ataque
+    virtual void attack(const std::string& target);
 };
 
 #endif

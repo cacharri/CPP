@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:30:27 by ialvarez          #+#    #+#             */
-/*   Updated: 2023/09/06 16:14:48 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/17 19:27:25 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class ClapTrap {
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap other);
 		std::string	getName() const;
-		virtual ~ClapTrap(); // Es virtual pq es buena practica si tienes clases heredadas, tu clase base tenga el destructor virtual
+		virtual ~ClapTrap();
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

@@ -24,7 +24,7 @@ public:
     ScavTrap& operator=(const ScavTrap other);
     ~ScavTrap();
     void guardGate();
-    virtual void attack(const std::string& target); // Sobrescribimos la función de ataque
+    virtual void attack(const std::string& target);
 };
 
 #endif
