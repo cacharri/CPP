@@ -6,7 +6,7 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:30:37 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/04/17 19:25:26 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/25 19:13:23 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ ClapTrap::ClapTrap() {
 }
 
 ClapTrap::ClapTrap(const std::string& initialName) : Name(initialName), Hit_points(10), Energy_points(10), Attack_damage(0) {
-	std::cout << "Constructor for Name called" << std::endl;
+	std::cout << "Constructor for " << Name << " called" << std::endl;
 }
 
 std::string	ClapTrap::getName() const {

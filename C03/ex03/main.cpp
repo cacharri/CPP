@@ -6,30 +6,25 @@
 /*   By: ialvarez <ialvarez@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/04 18:32:11 by ialvarez          #+#    #+#             */
-/*   Updated: 2024/04/17 19:27:54 by ialvarez         ###   ########.fr       */
+/*   Updated: 2024/04/25 20:28:47 by ialvarez         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int main() {
+    // Crear un DiamondTrap
+    DiamondTrap diamondTrap("Diamond");
 
-    // Crea instancias de cada clase y sus heredadas
-    ClapTrap claptrap("Vanido");
-    ScavTrap scavtrap("Lost mind");
-    FragTrap fragtrap("Croac");
+    // Llamar a las funciones heredadas
+    diamondTrap.takeDamage(20);
+    diamondTrap.beRepaired(10);
+    diamondTrap.ScavTrap::attack("Target");
 
-    claptrap.attack("Target 1");
-    claptrap.takeDamage(10);
-    claptrap.beRepaired(5);
+    // Llamar a la función especial de DiamondTrap
+    diamondTrap.whoAmI();
 
-    scavtrap.attack("Target 2");
-    scavtrap.takeDamage(15);
-    scavtrap.beRepaired(7);
-    scavtrap.guardGate();
-
-    fragtrap.attack("Target 3");
-    fragtrap.takeDamage(20);
-    fragtrap.beRepaired(10);
-    fragtrap.highFivesGuys();
+    return 0;
 }
+
+
