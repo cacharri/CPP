@@ -12,88 +12,81 @@
 
 #include "Animals.hpp"
 
-// Implementación de Animal
-
-Animal::Animal() : type("Animal") {
-    std::cout << "Constructor Animal called" << std::endl;
+AAnimal::AAnimal() : type("AAnimal") {
+    std::cout << "Constructor AAnimal called" << std::endl;
 }
 
-Animal::~Animal() {
-    std::cout << "Destructor Animal called" << std::endl;
+AAnimal::~AAnimal() {
+    std::cout << "Destructor AAnimal called" << std::endl;
 }
 
-Animal::Animal(const Animal& other) : type(other.type) {
-    std::cout << "Copy constructor Animal called" << std::endl;
+AAnimal::AAnimal(const AAnimal& other) : type(other.type) {
+    std::cout << "Copy constructor AAnimal called" << std::endl;
 }
 
-Animal& Animal::operator=(const Animal& other) {
-    std::cout << "Assignation operator of Animal called" << std::endl;
+AAnimal& AAnimal::operator=(const AAnimal& other) {
+    std::cout << "Assignation operator of AAnimal called" << std::endl;
     if (this != &other) {
         type = other.type;
     }
     return *this;
 }
 
-void Animal::makeSound() const {
-    std::cout << "Animal makes a sound" << std::endl;
+void AAnimal::makeSound() const {
+    std::cout << "AAnimal makes a sound" << std::endl;
 }
 
-std::string Animal::getType() const {
+std::string AAnimal::getType() const {
     return type;
 }
 
-// Implementación de Dog
-
-Dog::Dog() : Animal(), brain(new Brain) {
+Dog::Dog() : AAnimal(), brain(new Brain) {
     type = "Dog";
     std::cout << "Constructor Dog called" << std::endl;
 }
 
-Dog::Dog(const Dog& other) : Animal(other), brain(new Brain) {
+Dog::Dog(const Dog& other) : AAnimal(other), brain(new Brain) {
     std::cout << "Copy constructor Dog called" << std::endl;
 }
 
 Dog& Dog::operator=(const Dog& other) {
     std::cout << "Assignation operator of Dog called" << std::endl;
-    Animal::operator=(other);
+    AAnimal::operator=(other);
     return *this;
 }
 
 Dog::~Dog() {
     std::cout << "Destructor Dog called" << std::endl;
+    delete brain;
 }
-
 
 void Dog::makeSound() const {
     std::cout << "Guau guauu!!" << std::endl;
 }
 
-// Implementación de Cat
-
-Cat::Cat() : Animal(), brain(new Brain) {
+Cat::Cat() : AAnimal(), brain(new Brain) {
     type = "Cat";
     std::cout << "Constructor Cat called" << std::endl;
 }
 
-Cat::Cat(const Cat& other) : Animal(other), brain(new Brain) {
+Cat::Cat(const Cat& other) : AAnimal(other), brain(new Brain) {
     std::cout << "Copy constructor Cat called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& other) {
     std::cout << "Assignation operator of Cat called" << std::endl;
-    Animal::operator=(other);
+    AAnimal::operator=(other);
     return *this;
 }
 
 Cat::~Cat() {
     std::cout << "Destructor Cat called" << std::endl;
+    delete brain;
 }
 
 void Cat::makeSound() const {
     std::cout << "Miau miauu!" << std::endl;
 }
-
-// Implementación de WrongAnimal
 
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
     std::cout << "Constructor WrongAnimal called" << std::endl;
@@ -123,8 +116,6 @@ std::string WrongAnimal::getType() const {
     return type;
 }
 
-// Implementación de WrongCat
-
 WrongCat::WrongCat() : WrongAnimal(){
     type = "WrongCat";
     std::cout << "Constructor WrongCat called" << std::endl;
@@ -147,7 +138,6 @@ WrongCat& WrongCat::operator=(const WrongCat& other) {
 void WrongCat::makeSoundCat() const {
     std::cout << "guaaa uaaaaaa" << std::endl;
 }
-// Implementación de Brain
 
 Brain::Brain() {
     std::cout << "Constructor Brain called" << std::endl;

@@ -23,14 +23,6 @@ FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
     std::cout << "FragTrap [" << name << "] has been constructed!" << std::endl;
 }
 
-FragTrap& FragTrap::operator=(const FragTrap other) {
-    std::cout << "Assignation operator called" << std::endl;
-	if (this != &other) {
-		this->getName() = other.getName();
-	}
-	return *this;
-}
-
 FragTrap::FragTrap(const FragTrap& other) {
     std::cout << "Copy constructor called" << std::endl;
 	this->getName() = other.getName();

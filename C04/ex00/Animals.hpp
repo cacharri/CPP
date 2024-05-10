@@ -32,7 +32,7 @@ class Animal {
 class Dog : public Animal {
 	public:
 		Dog();
-		virtual ~Dog();
+		~Dog();
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
 		void makeSound() const;
@@ -42,7 +42,7 @@ class Cat : public Animal {
 	public:
 		Cat();
 		Cat(const Cat& other);
-		virtual ~Cat();
+		~Cat();
 		Cat& operator=(const Cat& other);
 		void makeSound() const;
 };
@@ -63,10 +63,10 @@ class WrongAnimal {
 class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
-		virtual ~WrongCat();
+		~WrongCat();
 		WrongCat(const WrongCat& other);
 		WrongCat& operator=(const WrongCat& other);
-		virtual void makeSoundCat() const;
+		void makeSoundCat() const;
 };
 
 #endif

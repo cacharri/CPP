@@ -26,12 +26,12 @@ class Brain	{
 		Brain& operator=(const Brain& other);
 };
 
-class Animal {
+class AAnimal {
 	public:
-		Animal();
-		virtual ~Animal();
-		Animal(const Animal& other);
-		Animal& operator=(const Animal& other);
+		AAnimal();
+		virtual ~AAnimal();
+		AAnimal(const AAnimal& other);
+		AAnimal& operator=(const AAnimal& other);
 		virtual void makeSound() const = 0;
 		std::string getType() const;
 
@@ -39,24 +39,24 @@ class Animal {
 		std::string type;
 };
 
-class Dog : public Animal {
+class Dog : public AAnimal {
 	private:
 		Brain* brain;
 	public:
 		Dog();
-		virtual ~Dog();
+		~Dog();
 		Dog(const Dog& other);
 		Dog& operator=(const Dog& other);
 		void makeSound() const;
 };
 
-class Cat : public Animal {
+class Cat : public AAnimal {
 	private:
 		Brain* brain;
 	public:
 		Cat();
 		Cat(const Cat& other);
-		virtual ~Cat();
+		~Cat();
 		Cat& operator=(const Cat& other);
 		void makeSound() const;
 };
@@ -77,10 +77,10 @@ class WrongAnimal {
 class WrongCat : public WrongAnimal {
 	public:
 		WrongCat();
-		virtual ~WrongCat();
+		~WrongCat();
 		WrongCat(const WrongCat& other);
 		WrongCat& operator=(const WrongCat& other);
-		virtual void makeSoundCat() const;
+		void makeSoundCat() const;
 };
 
 #endif

@@ -12,8 +12,6 @@
 
 #include "Animals.hpp"
 
-// Implementación de Animal
-
 Animal::Animal() : type("Animal") {
     std::cout << "Constructor Animal called" << std::endl;
 }
@@ -22,12 +20,10 @@ Animal::~Animal() {
     std::cout << "Destructor Animal called" << std::endl;
 }
 
-// Constructor de copia
 Animal::Animal(const Animal& other) : type(other.type) {
     std::cout << "Copy constructor Animal called" << std::endl;
 }
 
-// Operador de asignación
 Animal& Animal::operator=(const Animal& other) {
     std::cout << "Assignation operator of Animal called" << std::endl;
     if (this != &other) {
@@ -44,8 +40,6 @@ std::string Animal::getType() const {
     return type;
 }
 
-// Implementación de Dog
-
 Dog::Dog() : Animal() {
     type = "Dog";
     std::cout << "Constructor Dog called" << std::endl;
@@ -55,7 +49,6 @@ Dog::Dog(const Dog& other) : Animal(other) {
     std::cout << "Copy constructor Dog called" << std::endl;
 }
 
-// Operador de asignación de Dog
 Dog& Dog::operator=(const Dog& other) {
     std::cout << "Assignation operator of Dog called" << std::endl;
     Animal::operator=(other);
@@ -71,8 +64,6 @@ void Dog::makeSound() const {
     std::cout << "Guau guauu!!" << std::endl;
 }
 
-// Implementación de Cat
-
 Cat::Cat() : Animal() {
     type = "Cat";
     std::cout << "Constructor Cat called" << std::endl;
@@ -82,7 +73,6 @@ Cat::Cat(const Cat& other) : Animal(other) {
     std::cout << "Copy constructor Cat called" << std::endl;
 }
 
-// Operador de asignación de Cat
 Cat& Cat::operator=(const Cat& other) {
     std::cout << "Assignation operator of Cat called" << std::endl;
     Animal::operator=(other);
@@ -97,8 +87,6 @@ void Cat::makeSound() const {
     std::cout << "Miau miauu!" << std::endl;
 }
 
-// Implementación de WrongAnimal
-
 WrongAnimal::WrongAnimal() : type("WrongAnimal") {
     std::cout << "Constructor WrongAnimal called" << std::endl;
 }
@@ -107,7 +95,6 @@ WrongAnimal::~WrongAnimal() {
     std::cout << "Destructor WrongAnimal called" << std::endl;
 }
 
-// Constructor de copia
 WrongAnimal::WrongAnimal(const WrongAnimal& other) : type(other.type) {
     std::cout << "Copy constructor WrongAnimal called" << std::endl;
 }
@@ -127,8 +114,6 @@ void WrongAnimal::makeSound() const {
 std::string WrongAnimal::getType() const {
     return type;
 }
-
-// Implementación de WrongCat
 
 WrongCat::WrongCat() : WrongAnimal(){
     type = "WrongCat";
