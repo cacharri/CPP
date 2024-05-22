@@ -32,7 +32,7 @@ AMateria::~AMateria() {
 
 AMateria& AMateria::operator=(const AMateria& other) {
     if (this != &other) {
-        this->material = other.getType();
+        this->material = other.material;
         std::cout << "Assignation operator called" << std::endl;
     }
     return *this;
@@ -61,7 +61,7 @@ AMateria* Ice::clone() const {
 }
 
 void Ice::use(ICharacter& target) {
-    std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+    std::cout << "Ice:\"* shoots an ice bolt at " << target.getName() << " *\"" << std::endl;
 }
 
 Cure::Cure() : AMateria("cure") {}
@@ -75,5 +75,5 @@ AMateria* Cure::clone() const {
 }
 
 void Cure::use(ICharacter& target) {
-    std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
+    std::cout << "Cure:\"* heals " << target.getName() << "'s wounds *\"" << std::endl;
 }

@@ -41,6 +41,7 @@ class Character : public ICharacter {
 		void equip(AMateria* m);
 		void unequip(int idx);
 		void use(int idx, ICharacter& target);
+		void printEquippedMaterias() const;
 };
 
 class IMateriaSource {
@@ -52,13 +53,15 @@ class IMateriaSource {
 
 class MateriaSource : public IMateriaSource {
 	private:
-		AMateria* learnedMaterias[4];
+    	AMateria* learnedMaterias[4];
 
 	public:
-		MateriaSource();
-		virtual ~MateriaSource();
-		virtual void learnMateria(AMateria* m);
-		virtual AMateria* createMateria(std::string const & type);
+    	MateriaSource();
+    	MateriaSource(const MateriaSource& other);
+    	virtual ~MateriaSource();
+    	MateriaSource& operator=(const MateriaSource& other);
+    	virtual void learnMateria(AMateria* m);
+    	virtual AMateria* createMateria(std::string const & type);
 };
 
 #endif

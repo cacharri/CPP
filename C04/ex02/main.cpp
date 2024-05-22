@@ -13,7 +13,6 @@
 #include "Animals.hpp"
 
 int main() {
-    // Prueba de instanciación y eliminación de objetos individuales
     const AAnimal* j = new Dog();
     const AAnimal* i = new Cat();
     delete j;
@@ -26,12 +25,10 @@ int main() {
         animalArray[i + arraySize / 2] = new Cat();
     }
 
-    // Prueba de polimorfismo a través del array
     for (int i = 0; i < arraySize; ++i) {
-        animalArray[i]->makeSound(); // Cada animal hace su sonido específico
+        animalArray[i]->makeSound();
     }
 
-    // Eliminación del array de Animal
     for (int i = 0; i < arraySize; ++i) {
         delete animalArray[i];
     }
