@@ -13,15 +13,16 @@
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm(target) {}
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target) : AForm(target, 145, 137) {}
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other) {}
 
-void ShrubberyCreationForm::execute(const Bureaucrat&) const {
+void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
+    checkExecution(executor);
     std::string filename = getName() + "_shrubbery";
-    std::ofstream file(filename);
+    std::ofstream file(filename.c_str());
     if (file.is_open()) {
         file << "      *\n"
                 "     ***\n"
@@ -34,3 +35,4 @@ void ShrubberyCreationForm::execute(const Bureaucrat&) const {
         throw std::runtime_error("Unable to open file for writing");
     }
 }
+

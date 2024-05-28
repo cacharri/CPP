@@ -21,7 +21,12 @@ const char* AForm::GradeTooLowException::what() const throw() {
     return "Grade too low";
 }
 
-AForm::AForm(const std::string& name) : _name(name), _isSigned(false), _gradeToSign(50), _gradeToExecute(50) {}
+const char* AForm::FormNotSignedException::what() const throw() {
+    return "Form not signed";
+}
+
+AForm::AForm(const std::string& name, int gradeToSign, int gradeToExecute) :
+    _name(name), _isSigned(false), _gradeToSign(gradeToSign), _gradeToExecute(gradeToExecute) {}
 
 AForm::AForm(const AForm& other) :
     _name(other._name), _isSigned(other._isSigned), _gradeToSign(other._gradeToSign), _gradeToExecute(other._gradeToExecute) {}
@@ -55,6 +60,15 @@ void AForm::beSigned(const Bureaucrat& bureau) {
     if (bureau.getGrade() <= _gradeToSign) {
         _isSigned = true;
     } else {
+        throw GradeTooLowException();
+    }
+}
+
+void AForm::checkExecution(const Bureaucrat& executor) const {
+    if (!_isSigned) {
+        throw FormNotSignedException();
+    }
+    if (executor.getGrade() > _gradeToExecute) {
         throw GradeTooLowException();
     }
 }

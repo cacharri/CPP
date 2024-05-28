@@ -11,38 +11,39 @@
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main() {
     try {
-        Bureaucrat bureaucrat("John Doe", 100);
-        std::cout << bureaucrat << std::endl;
+        Bureaucrat john("John", 2);
+        Form formA("FormA", 3, 5);
 
-        bureaucrat.incrementGrade();
-        std::cout << bureaucrat << std::endl;
+        std::cout << john << std::endl;
+        std::cout << formA << std::endl;
 
-        bureaucrat.decrementGrade();
-        std::cout << bureaucrat << std::endl;
+        john.signForm(formA);
 
+        Bureaucrat jane("Jane", 4);
+        jane.signForm(formA);
+
+        std::cout << formA << std::endl;
     } catch (const std::exception& e) {
-        std::cerr << "Exception caught: " << e.what() << std::endl;
+        std::cerr << e.what() << std::endl;
     }
 
     try {
-        Bureaucrat bureaucrat_high("John Doe", 0);
-        std::cout << "Bureaucrat created successfully!" << std::endl;
-    } catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cerr << "Error creating bureaucrat: " << e.what() << std::endl;
-    } catch (const Bureaucrat::GradeTooLowException& e) {
-        std::cerr << "Error creating bureaucrat: " << e.what() << std::endl;
+        Bureaucrat low("Low", 150);
+        Form formB("FormB", 149, 150);
+
+        std::cout << low << std::endl;
+        std::cout << formB << std::endl;
+
+        low.signForm(formB);
+
+        std::cout << formB << std::endl;
+    } catch (const std::exception& e) {
+        std::cerr << e.what() << std::endl;
     }
 
-    try {
-        Bureaucrat bureaucrat_low("Jane Smith", 200);
-        std::cout << "Bureaucrat created successfully!" << std::endl;
-    } catch (const Bureaucrat::GradeTooHighException& e) {
-        std::cerr << "Error creating bureaucrat: " << e.what() << std::endl;
-    } catch (const Bureaucrat::GradeTooLowException& e) {
-        std::cerr << "Error creating bureaucrat: " << e.what() << std::endl;
-    }
     return 0;
 }
