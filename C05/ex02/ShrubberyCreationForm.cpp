@@ -19,6 +19,12 @@ ShrubberyCreationForm::~ShrubberyCreationForm() {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& other) : AForm(other) {}
 
+ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm& other)
+{
+	(void) other;
+	return *this;
+}
+
 void ShrubberyCreationForm::execute(const Bureaucrat& executor) const {
     checkExecution(executor);
     std::string filename = getName() + "_shrubbery";

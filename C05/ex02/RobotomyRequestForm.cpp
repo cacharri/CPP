@@ -19,6 +19,12 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other) {}
 
+RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+{
+	(void) other;
+	return *this;
+}
+
 void RobotomyRequestForm::execute(const Bureaucrat&) const {
     bool success = (rand() % 2) == 0;
     std::cout << "Making some drilling noises..." << std::endl;

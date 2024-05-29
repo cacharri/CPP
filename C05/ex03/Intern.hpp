@@ -13,7 +13,6 @@
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"

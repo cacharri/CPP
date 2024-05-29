@@ -18,13 +18,13 @@
 #include "Intern.hpp"
 
 int main() {
-    // Creamos un pasante (Intern)
-    Intern someRandomIntern;
-
-    // Creamos un burócrata (Bureaucrat)
-    Bureaucrat bureaucrat("John", 50);
-
     try {
+        // Creamos un pasante (Intern)
+        Intern someRandomIntern;
+
+        // Creamos un burócrata (Bureaucrat)
+        Bureaucrat bureaucrat("John", 2);
+
         // El pasante crea diferentes formularios utilizando la función makeForm
         AForm* pardonForm = someRandomIntern.makeForm("presidential pardon", "Criminal");
         AForm* shrubberyForm = someRandomIntern.makeForm("shrubbery creation", "Garden");
@@ -39,6 +39,15 @@ int main() {
         bureaucrat.executeForm(*pardonForm);
         bureaucrat.executeForm(*shrubberyForm);
         bureaucrat.executeForm(*robotomyForm);
+
+        // Intentar crear un formulario con un nombre no válido
+        AForm* invalidForm = someRandomIntern.makeForm("invalid form", "Nobody");
+        if (invalidForm == NULL) {
+            std::cout << "Invalid form creation handled correctly." << std::endl;
+        } else {
+            std::cerr << "Error: Invalid form creation should return nullptr." << std::endl;
+            delete invalidForm;
+        }
 
         // Liberamos la memoria de los formularios
         delete pardonForm;
