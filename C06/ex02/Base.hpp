@@ -13,21 +13,13 @@
 #ifndef BASE_HPP
 #define BASE_HPP
 
-#include <random>
-
 class Base {
     public:
         virtual ~Base() {}
-        Base * generate(void);
 };
 
-class A : Base {};
-class B : Base {};
-class C : Base {};
-
-void identify(Base* p);
-void identify(Base& p); 
-
-
+class A : public Base {};
+class B : public Base {};
+class C : public Base {};
 
 #endif
