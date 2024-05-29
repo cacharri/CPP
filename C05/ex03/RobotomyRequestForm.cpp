@@ -19,7 +19,7 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& other) : AForm(other) {}
 
-RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
+RobotomyRequestForm& RobotomyRequestForm::operator=(const RobotomyRequestForm& other)
 {
 	(void) other;
 	return *this;
