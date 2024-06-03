@@ -18,7 +18,6 @@ int main() {
     delete j;
     delete i;
 
-    // Create and fill an array of Animal objects
     const int arraySize = 4;
     Animal* animalArray[arraySize];
     for (int i = 0; i < arraySize / 2; ++i) {

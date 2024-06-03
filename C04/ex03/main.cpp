@@ -21,8 +21,6 @@ int main() {
 
     // Crear un personaje "me"
     ICharacter* me = new Character("me");
-
-    // Crear Materias y equiparlas al personaje "me"
     AMateria* ice = src->createMateria("ice");
     me->equip(ice);
     AMateria* cure = src->createMateria("cure");
@@ -31,7 +29,6 @@ int main() {
     // Crear un personaje "bob"
     ICharacter* bob = new Character("bob");
 
-    // Usar las Materias equipadas por "me" en "bob"
     me->use(0, *bob);
     me->use(1, *bob);
 
