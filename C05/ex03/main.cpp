@@ -19,28 +19,22 @@
 
 int main() {
     try {
-        // Creamos un pasante (Intern)
         Intern someRandomIntern;
 
-        // Creamos un burócrata (Bureaucrat)
         Bureaucrat bureaucrat("John", 2);
 
-        // El pasante crea diferentes formularios utilizando la función makeForm
         AForm* pardonForm = someRandomIntern.makeForm("presidential pardon", "Criminal");
         AForm* shrubberyForm = someRandomIntern.makeForm("shrubbery creation", "Garden");
         AForm* robotomyForm = someRandomIntern.makeForm("robotomy request", "Robot");
 
-        // Firmamos los formularios con el burócrata
         pardonForm->beSigned(bureaucrat);
         shrubberyForm->beSigned(bureaucrat);
         robotomyForm->beSigned(bureaucrat);
 
-        // Ejecutamos los formularios con el burócrata
         bureaucrat.executeForm(*pardonForm);
         bureaucrat.executeForm(*shrubberyForm);
         bureaucrat.executeForm(*robotomyForm);
 
-        // Intentar crear un formulario con un nombre no válido
         AForm* invalidForm = someRandomIntern.makeForm("invalid form", "Nobody");
         if (invalidForm == NULL) {
             std::cout << "Invalid form creation handled correctly." << std::endl;
@@ -49,7 +43,6 @@ int main() {
             delete invalidForm;
         }
 
-        // Liberamos la memoria de los formularios
         delete pardonForm;
         delete shrubberyForm;
         delete robotomyForm;
