@@ -39,6 +39,7 @@ class AForm {
         public:
             const char* what() const throw();
         };
+        AForm();
         AForm(const std::string& name, int _gradeToSign, int _gradeToExecute);
         virtual ~AForm();
         AForm(const AForm& other);
