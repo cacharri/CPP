@@ -13,7 +13,9 @@
 #ifndef SERIALIZER_HPP
 #define SERIALIZER_HPP
 
-#include <cstdint>
+# include <iostream>
+# include <string>
+# include <stdint.h>
 
 struct Data {
     int value;

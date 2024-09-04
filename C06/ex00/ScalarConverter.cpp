@@ -15,7 +15,7 @@
 void ScalarConverter::convert(const std::string& value) {
     // Convertir a char
     try {
-        int intValue = std::stoi(value);
+        int intValue = atoi(value.c_str());
         if (intValue >= 0 && intValue <= 127) {
             char c = static_cast<char>(intValue);
             if (std::isprint(c)) {
@@ -32,7 +32,7 @@ void ScalarConverter::convert(const std::string& value) {
 
     // Convertir a int
     try {
-        int intValue = std::stoi(value);
+        int intValue = atoi(value.c_str());
         std::cout << "int: " << intValue << std::endl;
     } catch (...) {
         std::cout << "int: impossible" << std::endl;
@@ -40,7 +40,7 @@ void ScalarConverter::convert(const std::string& value) {
 
     // Convertir a float
     try {
-        float floatValue = static_cast<float>(std::stod(value));
+        float floatValue = static_cast<float>(atof(value.c_str()));
         std::cout << "float: " << floatValue << "f" << std::endl;
     } catch (...) {
         std::cout << "float: impossible" << std::endl;
@@ -48,10 +48,9 @@ void ScalarConverter::convert(const std::string& value) {
 
     // Convertir a double
     try {
-        double doubleValue = std::stod(value);
+        double doubleValue = strtod(value.c_str(), NULL);
         std::cout << "double: " << doubleValue << std::endl;
     } catch (...) {
         std::cout << "double: impossible" << std::endl;
     }
 }
-

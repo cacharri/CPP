@@ -16,9 +16,15 @@
 
 #include <iostream>
 #include <cstdlib>
+#include <ctime>
 #include "Base.hpp"
 
 Base * generate(void) {
+    static bool seeded = false;
+    if (!seeded) {
+        srand(time(0));
+        seeded = true;
+    }
     int randNum = rand() % 3;
     switch (randNum) {
         case 0:
@@ -49,7 +55,6 @@ void identify(Base& p) {
 }
 
 int main() {
-    srand(time(NULL));
 
     Base* obj = generate();
 

@@ -14,13 +14,14 @@
 #define SCALARCONVERTER_HPP
 
 #include <string>
+#include <cstdlib>
 #include <iostream>
 #include <sstream>
 #include <limits>
 
 class ScalarConverter {
-public:
-    static void convert(const std::string& value);
+    public:
+        static void convert(const std::string& value);
 };
 
 #endif
