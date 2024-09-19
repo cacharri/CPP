@@ -26,11 +26,13 @@ struct Data {
 
 class Serializer {
     public:
-        // Método estático para serializar un puntero a Data
         static uintptr_t serialize(Data* ptr);
-
-        // Método estático para deserializar un uintptr_t a un puntero a Data
         static Data* deserialize(uintptr_t raw);
+    private:
+        Serializer();
+        ~Serializer();
+        Serializer(const Serializer& other);
+        Serializer& operator=(const Serializer& other);
 };
 
 #endif
