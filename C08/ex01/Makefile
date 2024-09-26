@@ -1,4 +1,4 @@
-NAME = vector
+NAME = Span
 CXX = clang++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
