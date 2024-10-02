@@ -1,15 +1,15 @@
-NAME = Span
+NAME = MutantWorldWeLiveIn
 CXX = clang++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-SRCS =	main.cpp Span.cpp
+SRCS =	main.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS) 
+$(NAME): $(OBJS) MutantStack.tpp
 	@$(CXX) $(CXXFLAGS) $(OBJS) -o $(NAME)
 
 clean:
