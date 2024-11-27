@@ -1,9 +1,9 @@
-NAME = Iter
+NAME = PmergeMe
 CXX = c++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
-SRCS =	main.cpp
+SRCS =	main.cpp PmergeMe.cpp
 
 OBJS = $(SRCS:.cpp=.o)
 
@@ -21,4 +21,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all re clean fclean test
+.PHONY: all re clean fclean

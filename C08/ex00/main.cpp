@@ -22,7 +22,7 @@ int main() {
 
     //std::list
     std::list<int> lst;
-    for (int i = 1; i <= 5; ++i) {
+    for (int i = 1; i <= 21; ++i) {
         lst.push_back(i);
     }
 

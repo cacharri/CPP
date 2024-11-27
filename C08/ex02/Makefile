@@ -1,5 +1,5 @@
 NAME = MutantWorldWeLiveIn
-CXX = clang++
+CXX = c++
 RM = rm -f
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -pedantic
 
