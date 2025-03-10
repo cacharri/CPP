@@ -1,19 +1,17 @@
 #ifndef PMERGEME_HPP
 #define PMERGEME_HPP
 
+#include <iostream>
 #include <vector>
 #include <deque>
-#include <string>
-#include <iostream>
-#include <stdexcept>
-#include <ctime>
-#include <sstream>
-#include <cstdlib>
 #include <algorithm>
+#include <ctime>
 
 class PmergeMe {
 public:
     PmergeMe();
+    PmergeMe(const PmergeMe& other);
+    PmergeMe& operator=(const PmergeMe& other);
     ~PmergeMe();
 
     void processInput(const std::vector<int>& input);
@@ -21,12 +19,13 @@ public:
 private:
     void sortWithVector(std::vector<int>& data);
     void sortWithDeque(std::deque<int>& data);
-
-    template <typename Container, typename SortFunction>
-    Container measureTime(Container data, SortFunction sortFunction, const std::string& containerName);
+    std::vector<int> generateJacobsthalSequence(int n);
 
     template <typename Container>
     void printContainer(const std::string& message, const Container& data);
+    void insertionSort(std::vector<int>& arr);
+    void insertionSortq(std::deque<int>& arr);
+
 };
 
 #endif
