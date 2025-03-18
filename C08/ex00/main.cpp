@@ -1,7 +1,7 @@
 #include "easyfind.hpp"
 
 int main() {
-    // Prueba con std::vector
+    //std::vector
     std::vector<int> vec;
     for (int i = 1; i <= 5; ++i) {
         vec.push_back(i);

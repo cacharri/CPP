@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <stdexcept>
 #include <limits.h>
+#include <ctime>
 
 
 class Span {

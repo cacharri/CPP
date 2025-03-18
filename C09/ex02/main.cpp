@@ -1,4 +1,6 @@
 #include "PmergeMe.hpp"
+#include <cstdlib>
+#include <cctype>
 
 bool isValidNumber(const char* str) {
     while (*str) {
