@@ -23,5 +23,8 @@ int main() {
     }
 
     std::stack<int> s(mstack); // Copiar MutantStack a std::stack
+    std::cout << s.top() << std::endl; // debería imprimir 0
+    s.pop();
+    std::cout << s.top() << std::endl;
     return 0;
 }
